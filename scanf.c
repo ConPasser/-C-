@@ -70,7 +70,9 @@ int main()
 	printf("较大的数为：%d\n",(input > com ? input : com));
 
 	//类型重命名  typedef
+	
 
+	
 	
 	return 0;
 }
