@@ -1,4 +1,63 @@
-ï»¿1>------ å·²å¯åŠ¨ç”Ÿæˆ:  é¡¹ç›®: 2022-03-23ä¸Š, é…ç½®: Debug Win32 ------
-1>  äºŒåˆ†æ³•.c
-1>  2022-03-23ä¸Š.vcxproj -> C:\Users\èµµå¥å…»\Desktop\Cè¯­è¨€git\2022-03-23ä¸Š\Debug\2022-03-23ä¸Š.exe
-========== ç”Ÿæˆ:  æˆåŠŸ 1 ä¸ªï¼Œå¤±è´¥ 0 ä¸ªï¼Œæœ€æ–° 0 ä¸ªï¼Œè·³è¿‡ 0 ä¸ª ==========
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+	int arr[100] = { 0 };
+	int sl = sizeof(arr) / sizeof(arr[0]);
+	int left = 0;
+	int right = sl - 1;
+	int min = 0;
+	int k = 0;   //ÊäÈëµÄÖµ
+	int i = 0;
+	for ( i = 0; i < sl + 1; i++)
+	{
+		//scanf("%d",&arr[i]);
+		arr[i] = i + 1;
+	}
+	//for ( i = 0; i < 100; i++)
+	//{
+	//	printf("%d ", arr[i]);
+	//}
+	/*if (arr[min] > k)
+	{
+		right = min - 1;
+	}
+	else if (arr[min] < k)
+	{
+		left = min + 1;
+	}
+	else
+	{
+		printf("ÕÒµ½ÁË£¬ÏÂ±êÎª£º%d",min);
+	}*/
+
+	printf("ÇëÊäÈëÒ»¸öÕûÊı:");
+	scanf("%d",&k);
+
+
+	while (right >= left)
+	{
+		min = (left + right) / 2;
+		if (arr[min] > k)
+		{
+			right = min - 1;
+		}
+		else if (arr[min] < k)
+		{
+			left = min + 1;
+		}
+		else
+		{
+			printf("ÕÒµ½ÁË£¬ÏÂ±êÎª£º%d\n", min);
+			break;
+		}
+	}
+	if (right < left)
+	{
+		printf("Ã»ÓĞ¸ÃÊı\n");
+	}
+
+
+	return 0;
+}
