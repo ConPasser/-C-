@@ -1,21 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "game.h"
 
-
-void game()
-{
-	char board[ROW][COL];
-	//玩家下
-	//电脑下
-
-	InitBoard(board,ROW,COL);
-	DisplayBoard(board,ROW,COL);
-
-}
-
 int main()
 {
 	int input = 0;
+	srand((unsigned int)time(NULL));
 	do
 	{
 		menu();
